@@ -33,6 +33,7 @@ pub enum QueryMsg {
     /// Query the historic cumulative prices, so that a TWAP can be calculated for an arbitrary range.
     /// Eg timestamp: T-24h, offset: 0, to get sequential values for 24h ago to calculate a spot price 24h ago
     /// or T=now, offset=24h to get a 24 moving window TWAP value
+    /// or T=date_trunc(now, 'day'), offset=24h to get yesterday's price
     #[returns(PriceResponse)]
     Price {
         pair: Addr,
