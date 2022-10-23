@@ -41,7 +41,10 @@ pub enum QueryMsg {
         offset: Timestamp,
     },
     #[returns(PairsResponse)]
-    Pairs {},
+    Pairs {
+        /// Optionally supply the offset for the current price calculation
+        offset: Option<Timestamp>,
+    },
 }
 
 #[cw_serde]
