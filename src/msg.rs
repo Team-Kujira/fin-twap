@@ -7,9 +7,9 @@ use cosmwasm_std::{Addr, Decimal, Timestamp};
 
 #[cw_serde]
 pub struct InstantiateMsg {
-    owner: Addr,
+    pub owner: Addr,
     // blocks where min(v[].timestamp) - block.timestamp > max_age will be pruned
-    max_age: Timestamp,
+    pub max_age: Timestamp,
 }
 
 #[cw_serde]
